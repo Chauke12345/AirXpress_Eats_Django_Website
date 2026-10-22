@@ -1,0 +1,36 @@
+{% extends "publicsite/base.html" %}{% load static %}{% block title %}AirXpress Eats | Local food, connected{% endblock %}{% block content %}
+<section class="hero"><div><span class="eyebrow">LOCAL FOOD. ONE CONNECTED COMMUNITY.</span><h1>Your next favourite meal is <em>closer than you think.</em></h1><p>Discover local food businesses, meet our delivery community and get started with AirXpress Eats.</p><div class="actions"><a class="btn" href="https://web-production-81fc2.up.railway.app/" target="_blank" rel="noopener">Open AirXpress Eats App ↗</a><a class="btn outline" href="{% url 'publicsite:partners' %}">Meet our shops</a></div><small>Ordering happens in the app. This website introduces our community.</small></div><div class="hero-art hero-art-image">
+<img src="{% static 'publicsite/images/airxpress-hero.png.png' %}" alt="AirXpress Eats premium food delivery artwork">
+</div></section>
+<section class="stats"><div><b>{{ shops.count }}</b><span>active partner shops</span></div><div><b>30+</b><span>shops we aim to welcome</span></div><div><b>1</b><span>connected community</span></div></section>
+<section class="section partner-showcase">
+<div class="section-head">
+<div>
+<span class="eyebrow">MEET THE COMMUNITY</span>
+<h2>Our Partner Shops</h2>
+<p>Local businesses. One connected community.</p>
+</div>
+<a class="link" href="{% url 'publicsite:partners' %}">View all shops ?</a>
+</div>
+<div class="partner-marquee">
+<div class="partner-track">
+{% for shop in shops %}
+{% if shop.logo %}
+<a class="partner-logo-item" href="{% url 'publicsite:partner_detail' shop.slug %}">
+<img src="{{ shop.logo.url }}" alt="{{ shop.name }} logo">
+<span>{{ shop.name }}</span>
+</a>
+{% endif %}
+{% endfor %}
+{% for shop in shops %}
+{% if shop.logo %}
+<a class="partner-logo-item" href="{% url 'publicsite:partner_detail' shop.slug %}" aria-hidden="true" tabindex="-1">
+<img src="{{ shop.logo.url }}" alt="">
+<span>{{ shop.name }}</span>
+</a>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</section>
+<section class="band"><div><span class="eyebrow">GROW WITH US</span><h2>Have a food business?</h2><p>Join our growing network of local food businesses.</p><a class="btn light" href="{% url 'publicsite:partner_with_us' %}">Become a partner</a></div><div class="partner-bike-art"><img src="{% static 'publicsite/images/airxpress-motorbike.png' %}" alt="AirXpress Eats delivery rider on a branded motorbike"></div></section>{% endblock %}

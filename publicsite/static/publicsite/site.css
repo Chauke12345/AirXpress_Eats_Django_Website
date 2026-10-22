@@ -1,0 +1,661 @@
+
+:root {
+  --ink: #f2f2f2;
+  --muted: #b0b0b0;
+  --blue: #d5d5d5;
+  --lime: #e0e0e0;
+  --paper: #101010;
+  --line: #363636;
+  --silver: #c7c7c7;
+  --black: #050505;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, "Segoe UI", sans-serif;
+  background: #080808;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.header {
+  padding: 15px clamp(18px, 5vw, 70px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #303030;
+  background: rgba(5, 5, 5, .97);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 8px 30px #0008;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  color: #aaa;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.mark {
+  background: linear-gradient(145deg, #f7f7f7, #777, #eee);
+  color: #080808;
+  border: 1px solid #fff;
+  border-radius: 13px;
+  padding: 10px 12px;
+  box-shadow: 0 0 18px #ffffff12;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ddd;
+}
+
+.nav a:not(.btn):hover,
+.footer a:hover { color: white; }
+
+.toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  border: 0;
+  background: none;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #f5f5f5, #a8a8a8 48%, #ededed);
+  color: #080808;
+  padding: 12px 18px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 5px 20px #0005;
+  transition: .2s;
+}
+
+.btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+.btn.small { padding: 9px 12px; }
+
+.btn.outline {
+  background: transparent;
+  color: #eee;
+  border: 1px solid #777;
+  box-shadow: none;
+}
+
+.hero {
+  padding: 75px clamp(20px, 7vw, 100px);
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 45px;
+  align-items: center;
+  min-height: 510px;
+  background:
+    radial-gradient(ellipse at 80% 40%, #30303055, transparent 40%),
+    linear-gradient(120deg, #050505, #151515 55%, #080808);
+  border-bottom: 1px solid #292929;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .18em;
+  color: #c9c9c9;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 66px);
+  letter-spacing: -.05em;
+  line-height: 1.04;
+  margin: 15px 0;
+  color: #f5f5f5;
+}
+
+.hero h1 em,
+.page-hero h1 em,
+.detail h1 em {
+  font-style: normal;
+  color: #bfbfbf;
+  background: linear-gradient(100deg, #fff, #999, #eee);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p,
+.page-hero p {
+  color: #b9b9b9;
+  font-size: 17px;
+  max-width: 590px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0 14px;
+}
+
+.hero small {
+  color: #8e8e8e;
+  font-size: 11px;
+}
+
+.hero-art {
+  min-height: 300px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.food {
+  font-size: 105px;
+  display: grid;
+  place-items: center;
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #353535, #101010 70%);
+  border: 1px solid #777;
+  box-shadow: 0 0 55px #ffffff12, inset 0 0 30px #000;
+  transform: rotate(-8deg);
+}
+
+.food span {
+  position: absolute;
+  font-size: 45px;
+  right: -10px;
+  bottom: 8px;
+}
+
+.float {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background: linear-gradient(135deg, #252525, #090909);
+  border: 1px solid #555;
+  padding: 12px;
+  border-radius: 9px;
+  box-shadow: 0 12px 30px #0008;
+  font-size: 12px;
+  font-weight: 700;
+  color: #eee;
+}
+
+.stamp {
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  background: linear-gradient(135deg, #eee, #888);
+  color: #080808;
+  border: 1px solid white;
+  padding: 13px 17px;
+  border-radius: 5px;
+  font-weight: 900;
+  line-height: 1.1;
+  transform: rotate(-7deg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  background: #111;
+  color: white;
+  padding: 22px clamp(20px, 8vw, 120px);
+  border-bottom: 1px solid #333;
+}
+
+.stats div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.stats b {
+  font-size: 28px;
+  color: #e2e2e2;
+}
+
+.stats span { font-size: 12px; color: #bcbcbc; }
+
+.section {
+  padding: 65px clamp(20px, 7vw, 100px);
+  background: #090909;
+}
+
+.section h2,
+.band h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: -.04em;
+  line-height: 1.1;
+  margin: 10px 0;
+  color: #f2f2f2;
+}
+
+.section p,
+.band p { color: #aaa; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.link { color: #ddd; font-weight: 800; font-size: 13px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.shop {
+  border: 1px solid #383838;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .25s;
+  background: linear-gradient(145deg, #171717, #0b0b0b);
+}
+
+.shop:hover {
+  transform: translateY(-4px);
+  border-color: #aaa;
+  box-shadow: 0 15px 35px #0009;
+}
+
+.shop img,
+.placeholder {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: 18px;
+  background: #111;
+  border-bottom: 1px solid #292929;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+  color: #ddd;
+}
+
+.shop > div:last-child { padding: 18px; }
+
+.shop small {
+  font-size: 9px;
+  letter-spacing: .12em;
+  color: #bcbcbc;
+  font-weight: 850;
+}
+
+.shop h3 { margin: 7px 0 2px; color: #f5f5f5; }
+
+.shop p { font-size: 13px; margin: 0 0 12px; }
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
+
+.band {
+  margin: 0 clamp(20px, 7vw, 100px) 65px;
+  padding: 38px;
+  border: 1px solid #444;
+  border-radius: 14px;
+  background: radial-gradient(ellipse at top right, #383838, #111 65%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.big-emoji { font-size: 80px; filter: grayscale(1); }
+
+.light {
+  background: linear-gradient(135deg, #f5f5f5, #999);
+  color: #080808;
+}
+
+.page-hero {
+  padding: 65px clamp(20px, 10vw, 150px);
+  background: radial-gradient(ellipse at 85% 20%, #33333366, transparent 45%), #090909;
+  border-bottom: 1px solid #303030;
+}
+
+.page-hero h1 { max-width: 800px; }
+
+.detail {
+  padding: 60px clamp(20px, 10vw, 150px);
+  background: linear-gradient(125deg, #181818, #080808);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 35px;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.detail-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  background: #111;
+  border: 1px solid #555;
+  display: grid;
+  place-items: center;
+  font-size: 70px;
+  overflow: hidden;
+  color: #ddd;
+}
+
+.detail-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+}
+
+.detail h1 { font-size: clamp(36px, 4vw, 55px); }
+.detail p { color: #aaa; }
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.panel {
+  background: #111;
+  border: 1px solid #353535;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.panel p { margin: 0 0 15px; }
+.panel small { color: #aaa; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cards article {
+  padding: 24px;
+  background: #111;
+  border: 1px solid #383838;
+  border-radius: 12px;
+}
+
+.cards article > b {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #eee, #888);
+  color: #080808;
+  border-radius: 8px;
+}
+
+.footer {
+  background: #030303;
+  color: white;
+  padding: 40px clamp(20px, 7vw, 100px) 22px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.5fr;
+  gap: 30px;
+  border-top: 1px solid #383838;
+}
+
+.footer > div:not(.copy) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer a,
+.footer p,
+.footer small { color: #aaa; font-size: 12px; }
+
+.copy {
+  grid-column: 1 / -1;
+  border-top: 1px solid #ffffff20;
+  padding-top: 18px;
+  color: #888;
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+  .nav { gap: 10px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero { gap: 20px; }
+  .footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 650px) {
+  .toggle { display: block; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #090909;
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid #383838;
+  }
+  .nav.open { display: flex; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 45px 22px 30px;
+  }
+  .hero-art { min-height: 250px; }
+  .food { width: 160px; height: 160px; font-size: 80px; }
+  .stats { grid-template-columns: 1fr; }
+  .stats div { justify-content: flex-start; }
+  .section { padding: 45px 22px; }
+  .section-head { align-items: flex-start; flex-direction: column; }
+  .grid, .cards { grid-template-columns: 1fr; }
+  .shop img, .placeholder { height: 210px; }
+  .band {
+    margin: 0 22px 40px;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .detail { grid-template-columns: 1fr; padding: 40px 22px; }
+  .detail-logo { width: 150px; height: 150px; }
+  .info { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr; }
+  .copy { grid-column: 1; }
+  .actions { flex-direction: column; align-items: stretch; text-align: center; }
+}
+/* Official AirXpress Eats logo */
+.brand-logo {
+    display: block;
+    width: 190px;
+    height: 58px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Hide the old AX badge if it remains anywhere */
+.mark {
+    display: none;
+}
+
+
+ 
+/* AirXpress Eats official logo */
+.brand-logo {
+  display: block;
+  width: 190px;
+  height: 65px;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+}
+.header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header .brand > span {
+  display: flex;
+  flex-direction: column;
+}
+.header .brand small {
+  display: block;
+  font-size: 10px;
+  opacity: .75;
+}
+.mark { display: none !important; }
+
+/* Continuously moving partner-shop logo strip */
+.partner-showcase {
+  overflow: hidden;
+  background: #090909;
+}
+.partner-marquee {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #383838;
+  border-bottom: 1px solid #383838;
+  padding: 22px 0;
+}
+.partner-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 26px;
+  animation: partner-scroll 35s linear infinite;
+}
+.partner-marquee:hover .partner-track {
+  animation-play-state: paused;
+}
+.partner-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 165px;
+  width: 165px;
+  min-height: 145px;
+  gap: 10px;
+  padding: 12px;
+  color: #eee;
+  background: #111;
+  border: 1px solid #383838;
+  border-radius: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.partner-logo-item img {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+}
+.partner-logo-item span {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+@keyframes partner-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-track { animation: none; }
+}
+
+
+
+/* AirXpress Eats motorbike - Become a Partner section */
+.band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  align-items: center;
+  gap: 30px;
+}
+.partner-bike-art {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partner-bike-art img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+@media (max-width: 700px) {
+  .band { grid-template-columns: 1fr; }
+  .partner-bike-art img { max-width: 360px; }
+}
+
+
+
+/* Premium AirXpress Eats hero artwork */
+.hero-art-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.hero-art-image img {
+  display: block;
+  width: min(100%, 520px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 12px 30px rgba(255,255,255,.08));
+}
+@media (max-width: 700px) {
+  .hero-art-image img { width: min(100%, 390px); }
+}
+
