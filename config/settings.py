@@ -77,15 +77,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database
+# Database — use Railway's persistent volume in production
+
+RAILWAY_DATA_DIR = Path("/app/data")
+USE_RAILWAY_VOLUME = RAILWAY_DATA_DIR.is_dir()
+
+if USE_RAILWAY_VOLUME:
+    DATABASE_NAME = RAILWAY_DATA_DIR / "db.sqlite3"
+else:
+    DATABASE_NAME = BASE_DIR / "db.sqlite3"
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_NAME,
     }
 }
-
 # Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -132,9 +139,12 @@ AIRXPRESS_APP_URL = os.environ.get(
 )
 
 # Uploaded media
-
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+
+if USE_RAILWAY_VOLUME:
+    MEDIA_ROOT = RAILWAY_DATA_DIR / "media"
+else:
+    MEDIA_ROOT = BASE_DIR / "media"
 
 # Production security settings
 
