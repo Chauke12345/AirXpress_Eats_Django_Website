@@ -452,9 +452,30 @@ h1 {
   gap: 8px;
 }
 
+
 .footer a,
 .footer p,
-.footer small { color: #aaa; font-size: 12px; }
+.footer small {
+  color: #c4c4c4;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  color: #fff;
+}
+
+.footer a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
 
 .copy {
   grid-column: 1 / -1;

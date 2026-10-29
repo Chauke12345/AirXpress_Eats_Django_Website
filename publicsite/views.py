@@ -12,3 +12,5 @@ def partner_detail(request,slug):
 def drivers(request): return render(request,"publicsite/info.html",{"heading":"Become a delivery driver","intro":"Interested in delivering with AirXpress Eats? Contact operations to learn about application and verification.","email":"modise.ofentse100@gmail.com","kind":"driver"})
 def partner_with_us(request): return render(request,"publicsite/info.html",{"heading":"Partner with AirXpress Eats","intro":"We are building a network of local food businesses. Tell our team about your business and service area.","email":"modise.ofentse100@gmail.com","kind":"partner"})
 def contact(request): return render(request,"publicsite/contact.html")
+def refund_policy(request):
+    return render(request, "publicsite/refund_policy.html")

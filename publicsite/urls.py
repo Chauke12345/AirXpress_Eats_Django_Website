@@ -8,4 +8,5 @@ urlpatterns=[
  path("drivers/",views.drivers,name="drivers"),
  path("partner-with-us/",views.partner_with_us,name="partner_with_us"),
  path("contact/",views.contact,name="contact"),
+ path("refund-policy/", views.refund_policy, name="refund_policy"),
 ]

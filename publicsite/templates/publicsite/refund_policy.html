@@ -1,0 +1,119 @@
+﻿{% extends "publicsite/base.html" %}
+
+{% block title %}Refund & Cancellation Policy | AirXpress Eats{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <p class="eyebrow">Customer information</p>
+        <h1>Refund and Cancellation Policy</h1>
+
+        <p>
+            We want customers to have a positive experience with AirXpress Eats.
+            This policy explains how to report an order problem and request a
+            cancellation or refund.
+        </p>
+
+        <p>
+            Refund requests are assessed according to the circumstances of the
+            order and applicable consumer law. Nothing in this policy removes
+            rights that customers have under applicable South African law.
+        </p>
+
+        <h2>1. Cancelling an order</h2>
+        <p>
+            If you need to cancel an order, contact the relevant shop or
+            AirXpress Eats support as soon as possible. Cancellation may be
+            more difficult once a shop has started preparing the order or a
+            driver has collected it. We will assess the request based on the
+            order's status and the circumstances.
+        </p>
+
+        <h2>2. Incorrect, missing or damaged items</h2>
+        <p>
+            If an order arrives with an incorrect or missing item, or an item
+            is damaged, contact support promptly. Please provide your order
+            details and a clear description of the problem. Photographs may
+            help us investigate where appropriate.
+        </p>
+
+        <h2>3. Late or undelivered orders</h2>
+        <p>
+            Delivery times can be affected by traffic, weather, shop
+            preparation and other circumstances. If your order has not arrived
+            or there is a significant delivery problem, contact support so the
+            order can be checked and an appropriate resolution considered.
+        </p>
+
+        <h2>4. Online payments and order confirmation</h2>
+        <p>
+            AirXpress Eats uses a one-time online checkout payment for
+            individual orders. Once payment has been successfully verified,
+            the order is intended to be confirmed automatically.
+        </p>
+        <p>
+            If your payment appears successful but you do not receive an
+            order confirmation, contact AirXpress Eats support and provide
+            your order details and payment confirmation. We will investigate
+            the transaction and order status.
+        </p>
+        <p>
+            If you believe you have been charged more than once for the same
+            order, contact support with the relevant payment references so
+            we can investigate and arrange an appropriate correction or
+            refund where applicable.
+        </p>
+
+        <h2>5. Refund assessment</h2>
+        <p>
+            Each request is assessed individually. Depending on the
+            circumstances, possible resolutions may include a correction,
+            replacement, cancellation or refund where appropriate. All
+            decisions must comply with applicable South African consumer law.
+        </p>
+
+        <h2>6. Refund processing</h2>
+        <p>
+            Where a refund is approved or otherwise required, it will
+            generally be returned through the original payment method where
+            possible. Processing times depend on the payment provider and
+            the customer's bank. We will communicate any relevant processing
+            information available to us.
+        </p>
+
+        <h2>7. How to request help</h2>
+        <p>
+            Contact AirXpress Eats support as soon as possible and provide
+            your order number, the contact details used for the order, and a
+            description of the issue. Keep relevant receipts or supporting
+            evidence until the matter is resolved.
+        </p>
+        <p>
+            <a class="btn" href="https://web-production-81fc2.up.railway.app/help/">
+                Contact AirXpress Eats Support
+            </a>
+        </p>
+
+        <h2>8. Consumer rights</h2>
+        <p>
+            This policy must be applied consistently with applicable South
+            African law, including any consumer rights that cannot lawfully
+            be excluded.
+        </p>
+
+        <h2>9. Policy updates</h2>
+        <p>
+            AirXpress Eats may update this policy as its services and
+            procedures develop. Customers should review the current version
+            when using the platform.
+        </p>
+
+        <p><strong>AirXpress Eats</strong></p>
+        <p>© {% now "Y" %} AirXpress Eats. All rights reserved.</p>
+
+        <p>
+            <a href="{% url 'publicsite:home' %}">Back to homepage</a>
+        </p>
+    </div>
+</section>
+{% endblock %}
